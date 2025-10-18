@@ -1,25 +1,60 @@
-# Antenna 2D-Viewer React 1.0.0
+# Antenna 2D Viewer React 1.0.0
 
-The Antenna 2D viewer is a Web-App based on React that enables the user to view a radio antenna in Polar-view and Cartesian-View at the same time.</br>
+The Antenna 2D Viewer is a React-based web application that enables users to visualize radio antenna radiation patterns in both polar and Cartesian views simultaneously. This tool is designed for engineers, researchers, and enthusiasts working with antenna design and analysis.
 
-## How the web app works
+## Features
 
-To use the app, you need to execute following steps:
-1. Install Node.js
-2. Go to the project's main directory.
-3. Type `npm install` - Wait for Completion
-4. Type `npm start` for Development-Mode or
-5. Or type `npm run build` for Production-Mode
+- **Dual Visualization**: Displays antenna radiation patterns in both polar (radial) and Cartesian (rectangular) coordinate systems.
+- **Horizontal and Vertical Patterns**: Supports visualization of antenna performance in both azimuthal (horizontal) and elevation (vertical) planes.
+- **User-Friendly Interface**: Built with React for a responsive and interactive experience.
+- **Custom Data Input**: Accepts antenna pattern data via a structured text file.
 
-## Structure of a file
+## Antenna Patterns Explained
 
-The antenna to be imported must be available as a text file.
+Antenna radiation patterns illustrate how an antenna radiates or receives energy as a function of direction, which is critical for applications like wireless communications, radar, and broadcasting. The Antenna 2D Viewer provides two complementary views:
 
-### Internal structure
+- **Polar View**: Plots signal strength (attenuation in dB) as a function of angle (0° to 359°) in a polar coordinate system. The radial distance from the center represents attenuation, and the angular position indicates direction. This view highlights:
+  - **Main Lobe**: The direction of maximum radiation.
+  - **Side Lobes**: Secondary radiation directions.
+  - **Nulls**: Directions with minimal radiation.
+  For example, a directional antenna shows a prominent main lobe, while an omnidirectional antenna displays a near-circular pattern.
 
-The text file must contain following data:
+- **Cartesian View**: Plots attenuation (y-axis) against angle (x-axis, 0° to 359°) in a rectangular coordinate system. This view is ideal for analyzing specific angular ranges and comparing signal strengths, offering a linear perspective on the same data.
 
-<pre>
+The app supports both **horizontal** (azimuthal plane) and **vertical** (elevation plane) radiation patterns, enabling comprehensive analysis of an antenna's three-dimensional performance.
+
+## Installation
+
+To set up the Antenna 2D Viewer, follow these steps:
+
+1. **Install Node.js**: Download and install [Node.js](https://nodejs.org) if not already installed.
+2. **Clone or Download the Repository**: Obtain the project files from the repository.
+3. **Navigate to the Project Directory**:
+   ```bash
+   cd path/to/antenna-2d-viewer
+   ```
+4. **Install Dependencies**:
+   ```bash
+   npm install
+   ```
+   Wait for the installation to complete.
+5. **Run the Application**:
+   - For development mode:
+     ```bash
+     npm start
+     ```
+     This starts a local development server, typically at `http://localhost:3000`.
+   - For production mode:
+     ```bash
+     npm run build
+     ```
+     This creates an optimized build in the `build/` directory.
+
+## Input File Structure
+
+The app requires antenna pattern data in a text file with the following structure:
+
+```plaintext
 HORIZONTAL
 0 0.000
 1 0.001
@@ -41,84 +76,23 @@ VERTICAL
 357 0.028
 358 0.012
 359 0.003
-</pre>
+```
 
-The first value is the angle (0° - 359°).</br>
-The second value is the attenuation (0dB - 40dB).
+- **Format**:
+  - Each line contains two values: the angle (0° to 359°) and the attenuation (0 dB to 40 dB).
+  - **Angle**: Represents the direction in the horizontal or vertical plane.
+  - **Attenuation**: Indicates signal strength, where lower dB values represent stronger signals and higher values indicate greater attenuation.
+- **Sections**:
+  - **HORIZONTAL**: Data for the azimuthal plane (360° around the antenna’s horizontal axis).
+  - **VERTICAL**: Data for the elevation plane (360° relative to the antenna’s vertical axis).
 
-## Technology used
+## Technologies Used
 
-This web app was created with Create React App.
+- **Create React App**: Bootstrapped with [Create React App](https://github.com/facebook/create-react-app) for a robust development environment.
+- **Node.js**: Powers the development server and dependency management.
+- **Visual Studio Code**: Recommended for code editing.
+- **Google Chrome**: Used for testing and debugging.
 
-The following tools were used:
+## Getting Started
 
-- [Visual Studio Code](https://code.visualstudio.com/)
-- [Node.js](https://nodejs.org)
-- [Google Chrome](https://www.google.com/chrome/)
-
-
-## Getting Started with Create React App
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This project was created using [Create React App](https://github.com/facebook/create-react-app). For additional details on available scripts and configuration options, refer to the [Create React App documentation](https://create-react-app.dev/docs/getting-started).
