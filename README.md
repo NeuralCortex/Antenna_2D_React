@@ -1,12 +1,8 @@
 # Antenna 2D Viewer React 1.0.0
 
-<<<<<<< HEAD
-The Antenna 2D Viewer is a React-based web application that enables users to visualize radio antenna radiation patterns in both polar and Cartesian views simultaneously. This tool is designed for engineers, researchers, and enthusiasts working with antenna design and analysis.
-=======
 ![image](https://github.com/NeuralCortex/Antenna_2D_React/blob/main/app.png)
 
-The Antenna 2D viewer is a Web-App based on React that enables the user to view a radio antenna in Polar-view and Cartesian-View at the same time.</br>
->>>>>>> 56633085309bb598b7424042286ceb756e71c8f8
+The Antenna 2D Viewer is a React-based web application that enables users to visualize radio antenna radiation patterns in both polar and Cartesian views simultaneously. This tool is designed for engineers, researchers, and enthusiasts working with antenna design and analysis.
 
 ## Features
 
